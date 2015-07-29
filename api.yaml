@@ -1,0 +1,8 @@
+# ---- PARAMETERS ----
+
+url:
+  staging: "https://api-staging.flyvictor.com"
+  develop: "https://api-staging.flyvictor.com" # todo change to develop url
+
+consumer_key: "test-interviewers"
+consumer_secret: "NUHUIHKBMBytfyuyhvjb!&*GYUVu"
