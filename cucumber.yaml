@@ -1,0 +1,8 @@
+# default
+default: --profile html_report
+
+# report
+html_report: --format html --out report/report.html --format pretty
+
+# chrome driver
+chrome: DRIVER=chrome
