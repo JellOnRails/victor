@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# -- handling tasks --
+gem 'rake'
+
 # -- web --
 gem 'capybara'
 gem 'cucumber'
