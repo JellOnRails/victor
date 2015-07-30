@@ -7,8 +7,9 @@ describe 'OAuth 1.0 algorithm' do
         sign = Api::HTTPRequest.new(consumer_key_cfg, consumer_secret_cfg)
         @request = sign.get(url_cfg + '/signature-test')
       end
-      it 'accept signature' do
+      it 'should accept signature' do
         send @request[:method], @request[:url], @request[:headers]
+        expect_status 200
         expect_json({status: "signature accepted."})
       end
     end

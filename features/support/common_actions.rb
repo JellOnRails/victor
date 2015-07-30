@@ -1,7 +1,7 @@
 
-def get_user_info(usr)
+def get_user_info(usr, cfg = CONFIG)
   begin
-    user = CONFIG['users'].fetch(usr)
+    user = cfg['users'].fetch(usr)
   rescue e
     raise "No such user configured: <#{usr}> => #{e.message}"
   end

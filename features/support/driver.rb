@@ -5,7 +5,7 @@ Capybara.register_driver :firefox do | app |
   Capybara::Selenium::Driver.new(app)
 end
 
-# Chrome todo activate chrome driver
+# Chrome
 Capybara.register_driver :chrome do | app |
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end

@@ -1,8 +1,13 @@
 # ---- PARAMETERS ----
-
 url:
   staging: "https://api-staging.flyvictor.com"
   develop: "https://api-staging.flyvictor.com" # todo change to develop url
 
 consumer_key: "test-interviewers"
 consumer_secret: "NUHUIHKBMBytfyuyhvjb!&*GYUVu"
+
+# ---- USERS SETTINGS ----
+users:
+  api_user:
+    username: "jell13@rambler.ru"
+    password_encoded: "UXdlcnR5MTIz\n"
