@@ -34,10 +34,10 @@ describe 'user authentication tokens' do
         sign = Api::HTTPRequest.new(consumer_key_cfg, consumer_secret_cfg)
         @request = sign.post(url_cfg + '/user-authentication-tokens', body: {'user-authentication-tokens': [{'username': 'wrong_username', 'password': 'wrong password'}]})
       end
-      it 'should return a valid tokens' do
+      it 'should return error' do
         post @request[:url], @request[:body], @request[:headers]
         expect_status 403
-        expect_json_keys(:errors, [:type, :title, :detail, :path])
+        expect_json_keys(:errors, :type, :title, :detail, :path)
       end
     end
   end

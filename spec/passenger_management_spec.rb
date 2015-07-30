@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Passenger Management' do
   context 'GET' do
     before :all do
-      @request = gen_request_with_token :get, '/passengers',
+      @request = gen_request_with_token :get, '/passengers'
     end
     it 'response should have appropriate structure' do
       get @request[:url], @request[:headers]
@@ -33,27 +33,27 @@ describe 'Passenger Management' do
     context 'create new passenger' do
       before :all do
         @request = gen_request_with_token :post, '/passengers'
-        @request[:body].merge!(
-            {
-                nickname: 'nickname',
-                title: 'title',
-                firstName: 'firstname',
-                lastName: 'lastname',
-                phone: '001',
-                companyName: 'companyname',
-                passportNumber: '2',
-                passportExpires: '2020-02-20',
-                issueDate: '1010-01-10',
-                issuingAuthority: 'issuingauthority',
-                birthDate: '1919-09-19',
-                nationality: 'nationality',
-                specialRequirements: 'specialrequirements',
-                mobilePhone: '002',
-                languageCode: 'EN',
-                isVisibleToUser: 'false'
-            }
-#        {"nickname": "nickname", "title": "title", "firstName": "firstname", "lastName": "lastname", "phone": "001", "companyName": "companyname", "passportNumber": "2", "passportExpires": "2020-02-20", "issueDate": "1010-01-10", "issuingAuthority": "issuingauthority", "birthDate": "1919-09-19", "nationality": "nationality", "specialRequirements": "specialrequirements", "mobilePhone": "002", "languageCode": "EN", "isVisibleToUser": "false"}
-        )
+        @request.merge!({body:
+                             {
+                                 nickname: 'nickname',
+                                 title: 'title',
+                                 firstName: 'firstname',
+                                 lastName: 'lastname',
+                                 phone: '001',
+                                 companyName: 'companyname',
+                                 passportNumber: '2',
+                                 passportExpires: '2020-02-20',
+                                 issueDate: '1010-01-10',
+                                 issuingAuthority: 'issuingauthority',
+                                 birthDate: '1919-09-19',
+                                 nationality: 'nationality',
+                                 specialRequirements: 'specialrequirements',
+                                 mobilePhone: '002',
+                                 languageCode: 'EN',
+                                 isVisibleToUser: 'false'
+                             }
+                         #        {"nickname": "nickname", "title": "title", "firstName": "firstname", "lastName": "lastname", "phone": "001", "companyName": "companyname", "passportNumber": "2", "passportExpires": "2020-02-20", "issueDate": "1010-01-10", "issuingAuthority": "issuingauthority", "birthDate": "1919-09-19", "nationality": "nationality", "specialRequirements": "specialrequirements", "mobilePhone": "002", "languageCode": "EN", "isVisibleToUser": "false"}
+                        })
       end
       it 'should return success' do
         post @request[:url], @request[:body], @request[:headers]
